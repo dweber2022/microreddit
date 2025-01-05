@@ -1,6 +1,11 @@
 <h1>New post</h1>
 <%= form_with model: @post do |form| %>
   <div>
+    <%= form.label :user_id, "User ID" %>
+    <%= form.text_field :user_id %>
+  </div>
+  </div>
+  <div>
     <%= form.label :link %>
     <%= form.text_field :link %>
   </div>
