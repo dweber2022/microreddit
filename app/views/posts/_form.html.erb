@@ -1,0 +1,22 @@
+<%= form_with model: post do |form| %>
+  <div>
+    <%= form.label :user_id, "User ID" %>
+    <%= form.text_field :user_id %>
+  </div>
+  </div>
+  <div>
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+  <% if post.errors.any? %>
+    <div>
+      <% post.errors.full_messages.each do |msg| %>
+        <% msg[0] = msg[0].downcase %>
+        <div>Error: <%= msg %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <br/>
+  <%= form.submit %>
+<% end %>
+
