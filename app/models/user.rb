@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :password, length: { in: 8..64 }
   validates :password, confirmation: true
   validates :password_confirmation, presence: true, unless: Proc.new { |a| a.password.blank? }
+  has_many :posts
 end
