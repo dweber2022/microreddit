@@ -1,0 +1,19 @@
+<h1>New post</h1>
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+  <% if @post.errors.any? %>
+    <div>
+      <% @post.errors.full_messages.each do |msg| %>
+        <% msg[0] = msg[0].downcase %>
+        <div>Error: <%= msg %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <br/>
+  <%= form.submit %>
+<% end %>
+<br/>
+<%= link_to "Back", posts_path %>
