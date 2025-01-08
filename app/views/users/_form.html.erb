@@ -1,0 +1,28 @@
+<%= form_with model: user do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <% if user.errors.any? %>
+    <div>
+      <% user.errors.full_messages.each do |msg| %>
+        <% msg[0] = msg[0].downcase %>
+        <div>Error: <%= msg %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <br/>
+  <%= form.submit %>
+<% end %>
