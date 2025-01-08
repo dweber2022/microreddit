@@ -2,5 +2,6 @@
 <h2>Author: <%= @post.user.name %></h2>
 <h2>Time: <%= distance_of_time_in_words Time.current, @post.created_at %> ago</h2>
 <div><%= link_to "Edit post", edit_post_path(@post) %></div>
+<div><%= button_to "Delete post", @post, method: :delete, data: { turbo_confirm: "Are you sure?" } %></div>
 <%= link_to "Back", posts_path %>
 
