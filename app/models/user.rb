@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password, confirmation: true
   validates :password_confirmation, presence: true, unless: Proc.new { |a| a.password.blank? }
   has_many :posts
+  has_many :comments
 end
