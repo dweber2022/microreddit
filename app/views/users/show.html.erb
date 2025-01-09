@@ -1,8 +1,5 @@
 <h1><%= @user.name %></h1>
 <h2>Joined: <%= distance_of_time_in_words @user.created_at, Time.current %> ago</h2>
-<h2>Posts</h2>
-<%= render "posts/posts", posts: @posts %>
-<br/>
 <%= link_to "Edit user", edit_user_path(@user) %>
 <%= link_to "Back to users", users_path %>
 <%= link_to "Back to home", posts_path %>
